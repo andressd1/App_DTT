@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightGray"
+        android:orientation="vertical"
+        tools:context=".HouseProfile"
+
+        >
+
+        <ImageView
+            android:id="@+id/houseProfileImage"
+            android:layout_width="match_parent"
+            android:layout_height="350sp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/house_foreground"
+            android:contentDescription="@string/House_Image_Descr" />
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10sp"
+            android:background="@null"
+            android:onClick="onClickButton"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back_foreground"
+            android:tint="@color/white"
+            android:contentDescription="@string/back_button" />
+
+        <LinearLayout
+            android:id="@+id/profileText"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/houseProfileImage"
+            android:layout_marginTop="-30sp"
+            android:background="@drawable/roundedprofile"
+            android:orientation="vertical"
+            android:padding="25sp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10sp">
+
+                <TextView
+                    android:id="@+id/priceProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text=""
+                    android:textColor="@color/Strong"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toEndOf="@+id/priceProfile">
+                    <!--        Beds icon + number-->
+
+                    <ImageView
+                        android:id="@+id/bedsIconIv"
+                        android:layout_width="16sp"
+                        android:layout_height="16sp"
+                        android:layout_marginStart="30sp"
+                        android:layout_marginEnd="3sp"
+                        android:src="@drawable/ic_bed" />
+
+                    <TextView
+                        android:id="@+id/bedsTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_toEndOf="@+id/bedsIconIv"
+                        android:text=""
+                        android:textColor="@color/Medium"
+                        android:textSize="11sp"
+
+                        />
+
+                    <!--        baths icon + number-->
+
+                    <ImageView
+                        android:id="@+id/bathsIconIv"
+                        android:layout_width="16sp"
+                        android:layout_height="16sp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="1sp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_toEndOf="@+id/bedsTv"
+                        android:src="@drawable/ic_bath" />
+
+                    <TextView
+                        android:id="@+id/bathsTv"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_toEndOf="@+id/bathsIconIv"
+                        android:text=""
+                        android:textColor="@color/Medium"
+                        android:textSize="11sp"
+
+                        />
+
+
+                    <!--        images icon + number-->
+
+                    <ImageView
+                        android:id="@+id/imageIconIv"
+                        android:layout_width="16sp"
+                        android:layout_height="16sp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="1sp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toEndOf="@+id/bathsTv"
+                        android:src="@drawable/ic_layers" />
+
+                    <TextView
+                        android:id="@+id/sizeTv"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_toEndOf="@+id/imageIconIv"
+                        android:text=""
+                        android:textColor="@color/Medium"
+                        android:textSize="11sp"
+
+                        />
+
+
+                    <!--        distance icon + number-->
+
+                    <ImageView
+                        android:id="@+id/distanceIconIv"
+                        android:layout_width="16sp"
+                        android:layout_height="16sp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="1sp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toEndOf="@+id/sizeTv"
+                        android:src="@drawable/ic_location" />
+
+                    <TextView
+                        android:id="@+id/distanceTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_toEndOf="@+id/distanceIconIv"
+                        android:text=""
+                        android:textColor="@color/Medium"
+                        android:textSize="11sp"
+
+                        />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:text="@string/description"
+                android:textColor="@color/Strong"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/descriptioTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:text=""
+                android:textColor="@color/Medium"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/locationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:text="@string/location"
+                android:textColor="@color/Strong"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="300sp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>
